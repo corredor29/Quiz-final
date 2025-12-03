@@ -332,13 +332,17 @@ X4 -----/
 
 9.1 ¿Qué camino tiene prioridad lógica?
 
-------
+No existe prioridad lógica; ambos caminos (A y B) tienen el mismo peso porque la salida final es OR.
+
+-----
 
 9.2 ¿Qué ocurre si COMP(1) es OR y COMP(2) es AND?
 
-------
+Si COMP(1) es OR, A se activa con un solo hecho (d o e), volviéndose el camino dominante.
 
 ------
+
+
 
 # PREGUNTA 10 – Red final con múltiples caminos
 
@@ -351,9 +355,18 @@ X3 ------------------------/
 
 10.1 Construya su red final personalizada:
 
+d ---- AND ---- P ----\
+                        \
+e ---- AND ---- Q ----   OR ----> K
+                          /
+f -----------------------/
+
+
 ------
 
 10.2 Explique el papel de la compuerta OR(6):
+
+OR(6) permite que META (K) se active con cualquiera de las rutas disponibles.
 
 ------
 
@@ -361,6 +374,5 @@ X3 ------------------------/
 
 ------
 
-------
-
-Si
+El conjunto mínimo de hechos que activa META es:
+{ f }
